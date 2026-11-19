@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Ironclad Office | Official Installer &amp; Buyer Download Portal</title>
+  <meta name="description" content="Download the official offline installers for Ironclad Office (Windows 10/11 and macOS Universal) plus the 2-page Quick Start Guide PDF." />
+  <link rel="icon" type="image/png" href="./icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #F6F4EE;
+      --surface: #FFFFFF;
+      --surface-soft: #FBF9F5;
+      --border: #E4DEC9;
+      --border-strong: #CFC6AE;
+      --ink: #171715;
+      --ink-muted: #57544C;
+      --ink-subtle: #78746A;
+      --brass: #9C7128;
+      --brass-dark: #7D581B;
+      --brass-soft: #FBF5E8;
+      --emerald: #1B5E3A;
+      --emerald-soft: #ECF6F0;
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(23, 23, 21, 0.055), 0 1px 3px rgba(23, 23, 21, 0.04);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background:
+        radial-gradient(900px 420px at 15% -5%, rgba(156, 113, 40, 0.08), transparent 60%),
+        radial-gradient(700px 360px at 90% 0%, rgba(27, 94, 58, 0.05), transparent 55%),
+        var(--bg);
+      color: var(--ink);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+
+    /* Header */
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--ink);
+    }
+
+    .brand img {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.14);
+    }
+
+    .brand-title {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      line-height: 1.1;
+    }
+
+    .brand-sub {
+      font-size: 0.78rem;
+      color: var(--ink-subtle);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .version-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 7px 13px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      color: var(--ink-muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--emerald);
+      box-shadow: 0 0 0 3px rgba(27, 94, 58, 0.16);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 40px 0 28px;
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--brass-dark);
+      background: var(--brass-soft);
+      border: 1px solid #EADBB9;
+      padding: 5px 11px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: clamp(2rem, 4.5vw, 2.95rem);
+      font-weight: 600;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      margin: 0 0 14px;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: var(--ink-muted);
+      margin: 0;
+    }
+
+    /* Download Cards */
+    .download-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 26px;
+    }
+
+    @media (max-width: 720px) {
+      .download-grid { grid-template-columns: 1fr; }
+    }
+
+    .dl-card {
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .dl-card.recommended {
+      border: 2px solid var(--brass);
+      background: linear-gradient(180deg, #FFFDF8 0%, #FFFFFF 36%);
+    }
+
+    .rec-badge {
+      display: none;
+      position: absolute;
+      top: -12px;
+      left: 20px;
+      background: var(--brass);
+      color: #FFFFFF;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    .dl-card.recommended .rec-badge {
+      display: inline-block;
+    }
+
+    .os-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .os-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 11px;
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ink);
+      flex-shrink: 0;
+    }
+
+    .os-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .os-spec {
+      font-size: 0.85rem;
+      color: var(--ink-subtle);
+      margin: 2px 0 0;
+    }
+
+    .file-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--ink-muted);
+      overflow-x: auto;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 11px;
+      background: var(--ink);
+      color: #FFFFFF;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.96rem;
+      transition: background 0.15s ease, transform 0.12s ease;
+    }
+
+    .btn-primary:hover {
+      background: #2C2B27;
+      transform: translateY(-1px);
+    }
+
+    .dl-card.recommended .btn-primary {
+      background: var(--brass-dark);
+    }
+
+    .dl-card.recommended .btn-primary:hover {
+      background: #674714;
+    }
+
+    /* Quick Start Bar */
+    .guide-bar {
+      margin-top: 18px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .guide-bar strong {
+      display: block;
+      font-size: 0.98rem;
+    }
+
+    .guide-bar span {
+      font-size: 0.88rem;
+      color: var(--ink-muted);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--border-strong);
+      background: var(--surface-soft);
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.88rem;
+      white-space: nowrap;
+      transition: background 0.15s ease;
+    }
+
+    .btn-secondary:hover {
+      background: #EFEAD9;
+    }
+
+    /* Steps Section */
+    .section-title {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 1.65rem;
+      font-weight: 600;
+      margin: 44px 0 16px;
+      letter-spacing: -0.015em;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    @media (max-width: 780px) {
+      .steps { grid-template-columns: 1fr; }
+    }
+
+    .step-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: var(--brass-soft);
+      color: var(--brass-dark);
+      border: 1px solid #EADBB9;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 0.85rem;
+      margin-bottom: 12px;
+    }
+
+    .step-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.02rem;
+    }
+
+    .step-card p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--ink-muted);
+    }
+
+    code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.84em;
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      padding: 1px 6px;
+      border-radius: 6px;
+      color: var(--ink);
+    }
+
+    /* SmartScreen / Gatekeeper Help */
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    @media (max-width: 720px) {
+      .trust-grid { grid-template-columns: 1fr; }
+    }
+
+    .notice-box {
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--brass);
+      border-radius: 12px;
+      padding: 16px 18px;
+      font-size: 0.88rem;
+      color: var(--ink-muted);
+    }
+
+    .notice-box strong {
+      display: block;
+      color: var(--ink);
+      margin-bottom: 4px;
+      font-size: 0.92rem;
+    }
+
+    /* Suite Overview */
+    .suite-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    @media (max-width: 780px) {
+      .suite-grid { grid-template-columns: 1fr; }
+    }
+
+    .suite-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    .suite-tag {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--emerald);
+      background: var(--emerald-soft);
+      padding: 3px 8px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
+
+    .suite-card h3 {
+      margin: 0 0 6px;
+      font-size: 1rem;
+    }
+
+    .suite-card p {
+      margin: 0;
+      font-size: 0.86rem;
+      color: var(--ink-muted);
+    }
+
+    footer {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.84rem;
+      color: var(--ink-subtle);
+    }
+
+    footer a {
+      color: var(--brass-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <div class="brand">
+        <img src="./icon.png" alt="Ironclad Office Logo" width="40" height="40" />
+        <div>
+          <div class="brand-title">Ironclad Office</div>
+          <div class="brand-sub">Official Buyer Download Portal</div>
+        </div>
+      </div>
+      <div class="version-pill">
+        <span class="dot" aria-hidden="true"></span>
+        <span id="release-version">Release v1.0.1</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <span class="eyebrow">100% Offline Desktop Software | Lifetime License</span>
+        <h1>Download Ironclad Office for Your Computer</h1>
+        <p class="lead">
+          One clean installer includes <strong>Ironclad PDF Studio</strong>, <strong>Ironclad Ledger</strong>, and <strong>Ironclad Voice</strong>. Install it once, paste the license key from your order message, and own it forever with zero monthly fees and zero cloud uploads.
+        </p>
+
+        <div class="download-grid">
+          <!-- Windows Card -->
+          <article class="dl-card" id="card-win">
+            <span class="rec-badge">Recommended for Your PC</span>
+            <div>
+              <div class="os-header">
+                <div class="os-icon" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3 5.5L10.8 4.4V11.5H3V5.5ZM11.9 4.2L21 3V11.5H11.9V4.2ZM3 12.6H10.8V19.7L3 18.6V12.6ZM11.9 12.6H21V21L11.9 19.8V12.6Z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h2 class="os-name">Windows 10 &amp; 11</h2>
+                  <p class="os-spec">64-bit Standard Desktop Installer (.exe)</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="file-meta">
+              <span id="win-filename">Ironclad-Office-Setup-1.0.1.exe</span>
+              <span id="win-size">~320 MB</span>
+            </div>
+
+            <a id="win-link" class="btn-primary" href="https://github.com/Wealthcoop/ironclad-office-downloads/releases/latest/download/Ironclad-Office-Setup-1.0.1.exe">
+              <span>Download Windows Installer</span>
+              <span aria-hidden="true">&darr;</span>
+            </a>
+          </article>
+
+          <!-- macOS Card -->
+          <article class="dl-card" id="card-mac">
+            <span class="rec-badge">Recommended for Your Mac</span>
+            <div>
+              <div class="os-header">
+                <div class="os-icon" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.572-2.27 1.206-2.98.804-.94 2.142-1.64 3.248-1.68.03.13.05.28.05.43zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.945 1.34-1.94 2.71-3.43 2.71-1.517 0-1.9-.88-3.63-.88-1.698 0-2.302.91-3.67.91-1.377 0-2.332-1.26-3.428-2.8-1.287-1.82-2.323-4.63-2.323-7.28 0-4.28 2.797-6.55 5.552-6.55 1.448 0 2.675.95 3.6.95.865 0 2.222-1.01 3.902-1.01.613 0 2.886.06 4.374 2.19-.13.09-2.383 1.37-2.383 4.19 0 3.26 2.854 4.42 2.955 4.45z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h2 class="os-name">macOS (Universal)</h2>
+                  <p class="os-spec">Apple Silicon (M1-M4) &amp; Intel Macs (.dmg)</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="file-meta">
+              <span id="mac-filename">Ironclad-Office-1.0.1-universal.dmg</span>
+              <span id="mac-size">Universal DMG</span>
+            </div>
+
+            <a id="mac-link" class="btn-primary" href="https://github.com/Wealthcoop/ironclad-office-downloads/releases/latest/download/Ironclad-Office-1.0.1-universal.dmg">
+              <span>Download Mac Installer</span>
+              <span aria-hidden="true">&darr;</span>
+            </a>
+          </article>
+        </div>
+
+        <div class="guide-bar">
+          <div>
+            <strong>2-Page Quick Start Setup Guide (PDF)</strong>
+            <span>Printable checklist covering installation, key activation, and quick tips for all 3 apps.</span>
+          </div>
+          <a id="pdf-link" class="btn-secondary" href="https://github.com/Wealthcoop/ironclad-office-downloads/releases/latest/download/Ironclad-Office-Quick-Start-Guide.pdf">
+            Download Quick Start PDF &darr;
+          </a>
+        </div>
+      </section>
+
+      <section aria-labelledby="setup-heading">
+        <h2 class="section-title" id="setup-heading">60-Second Setup &amp; Key Activation</h2>
+        <div class="steps">
+          <div class="step-card">
+            <div class="step-num">1</div>
+            <h3>Install the App</h3>
+            <p>Double-click the downloaded file to install Ironclad Office on your PC or drag Ironclad Office into your Applications folder on Mac.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">2</div>
+            <h3>Paste Your Lifetime Key</h3>
+            <p>Open Ironclad Office, click <strong>Enter License Key</strong> in the top-right corner, click <strong>Paste from Clipboard</strong>, and click <strong>Activate</strong>. Works 100% offline.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">3</div>
+            <h3>Use Built-In Help Anytime</h3>
+            <p>Every tool, button, and tax line has a clickable <code>(i)</code> help button with plain-English instructions. Click <strong>Try Sample</strong> inside any app to practice safely.</p>
+          </div>
+        </div>
+
+        <div class="trust-grid">
+          <div class="notice-box">
+            <strong>Windows SmartScreen Prompt? (Normal for New Releases)</strong>
+            If Windows shows a blue "Windows protected your PC" pop-up on a fresh release, click <strong>More info</strong> and then click <strong>Run anyway</strong>. Ironclad Office runs 100% locally with zero internet tracking.
+          </div>
+          <div class="notice-box">
+            <strong>Mac First-Launch Tip</strong>
+            After dragging Ironclad Office into Applications, if macOS asks to confirm opening a newly downloaded app, right-click the app icon and pick <strong>Open</strong> (or allow it once in System Settings &gt; Privacy &amp; Security).
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="suite-heading">
+        <h2 class="section-title" id="suite-heading">Your Key Unlocks the Program(s) You Purchased</h2>
+        <div class="suite-grid">
+          <div class="suite-card">
+            <span class="suite-tag">ICLO-PDF1 / BUND</span>
+            <h3>Ironclad PDF Studio</h3>
+            <p>Merge, split, reorder, rotate, e-sign, permanently burn-in redact private numbers, run offline OCR to Word, compress, and export images.</p>
+          </div>
+          <div class="suite-card">
+            <span class="suite-tag">ICLO-LDG1 / BUND</span>
+            <h3>Ironclad Ledger</h3>
+            <p>Private offline SQLite bookkeeping, Bank &amp; eBay Seller CSV auto-splitter, branded PDF invoices, IRS Schedule C, 1099 tracker, and CPA Tax Packet.</p>
+          </div>
+          <div class="suite-card">
+            <span class="suite-tag">ICLO-VOC1 / BUND</span>
+            <h3>Ironclad Voice</h3>
+            <p>Local Whisper live voice dictation, unlimited offline MP3/WAV/MP4 transcription, custom vocabulary dictionary, and Word/SRT/VTT exports.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>&copy; 2026 Gold Standard Assets LLC. Ironclad Office runs 100% offline after activation.</span>
+      <a href="https://github.com/Wealthcoop/ironclad-office-downloads/releases/latest" target="_blank" rel="noopener noreferrer">View All Release Files</a>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var ua = (navigator.userAgent || '').toLowerCase();
+      var platform = (navigator.platform || '').toLowerCase();
+      var isMac = platform.indexOf('mac') !== -1 || ua.indexOf('mac os') !== -1;
+      var isWin = platform.indexOf('win') !== -1 || ua.indexOf('windows') !== -1;
+      if (isMac) {
+        var macCard = document.getElementById('card-mac');
+        if (macCard) macCard.classList.add('recommended');
+      } else if (isWin) {
+        var winCard = document.getElementById('card-win');
+        if (winCard) winCard.classList.add('recommended');
+      }
+
+      function fmtMB(bytes) {
+        if (!bytes || isNaN(bytes)) return '';
+        return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+      }
+
+      fetch('https://api.github.com/repos/Wealthcoop/ironclad-office-downloads/releases/latest')
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (rel) {
+          if (!rel || !Array.isArray(rel.assets)) return;
+          if (rel.tag_name) {
+            var verEl = document.getElementById('release-version');
+            if (verEl) verEl.textContent = 'Release ' + rel.tag_name;
+          }
+          var winAsset = rel.assets.find(function (a) { return /\.exe$/i.test(a.name); });
+          var macAsset = rel.assets.find(function (a) { return /universal\.dmg$/i.test(a.name); })
+            || rel.assets.find(function (a) { return /\.dmg$/i.test(a.name); });
+          var pdfAsset = rel.assets.find(function (a) { return /\.pdf$/i.test(a.name); });
+
+          if (winAsset) {
+            document.getElementById('win-link').href = winAsset.browser_download_url;
+            document.getElementById('win-filename').textContent = winAsset.name;
+            document.getElementById('win-size').textContent = fmtMB(winAsset.size);
+          }
+          if (macAsset) {
+            document.getElementById('mac-link').href = macAsset.browser_download_url;
+            document.getElementById('mac-filename').textContent = macAsset.name;
+            document.getElementById('mac-size').textContent = fmtMB(macAsset.size);
+          }
+          if (pdfAsset) {
+            document.getElementById('pdf-link').href = pdfAsset.browser_download_url;
+          }
+        })
+        .catch(function () {
+          // Static fallback links remain active
+        });
+    })();
+  </script>
+</body>
+</html>
